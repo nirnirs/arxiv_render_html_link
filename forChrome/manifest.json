@@ -1,16 +1,16 @@
 {
-  "name": "withAr5iv",
-  "short_name": "withAr5iv",
+  "name": "Render arXiv as HTML",
+  "short_name": "arXivHTML",
   "version": "1.0",
   "manifest_version": 3,
-  "description": "ArXiv with Ar5iv",
+  "description": "Add links for rendering arXiv papers with ar5iv or academ.us.",
   "host_permissions": [
       "https://arxiv.org/",
       "http://arxiv.org/"
   ],
   "content_scripts": [{
     "matches": [ "*://*.arxiv.org/*" ],
-    "js": ["withAr5iv.js"],
+    "js": ["arxiv_render_html_link.js"],
     "all_frames": true
   }],
   "icons": {
