@@ -18,6 +18,7 @@ if (isArxiv) {
       let dropped = linkTo.slice(formatPrefix.length);
       let arxiv_url = "https://ar5iv.org/abs/" + dropped;
       let academus_url = "https://academ.us/article/" + dropped;
+      let vanity_url = "https://www.arxiv-vanity.com/papers/" + dropped;
 
       let span = document.createElement("span");
 
@@ -29,10 +30,16 @@ if (isArxiv) {
       a_academus.href = academus_url;
       a_academus.appendChild(document.createTextNode("academus"));
 
+      let a_vanity = document.createElement("a");
+      a_vanity.href = vanity_url;
+      a_vanity.appendChild(document.createTextNode("vanity"));
+
       span.appendChild(document.createTextNode('; '))
       span.appendChild(a_arxiv);
       span.appendChild(document.createTextNode('/'))
       span.appendChild(a_academus);
+      span.appendChild(document.createTextNode('/'))
+      span.appendChild(a_vanity);
       ele.parentNode.appendChild(span);
     }
   });
